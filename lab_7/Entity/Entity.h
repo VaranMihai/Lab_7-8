@@ -11,15 +11,21 @@ using namespace std;
 
 class Entity{
 private:
-    char* name;
+    char* type;
+    int day;
+    int sum;
 public:
     Entity();
-    Entity(char* n);
+    Entity(char* n, int day, int s);
     Entity(const Entity &e);
     ~Entity();
     char* get_name();
+    int get_day();
+    int get_sum();
     char* to_String();
     void set_name(char* n);
+    void set_day(int d);
+    void set_sum(int s);
     Entity& operator=(const Entity &e);
     bool operator==(const Entity &e) const;
     friend istream& operator>>(istream& in, Entity& e);

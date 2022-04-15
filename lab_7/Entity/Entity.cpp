@@ -9,64 +9,92 @@
 using namespace std;
 
 Entity::Entity() {
-    this->name = nullptr;
+    this->type = nullptr;
+    this->day = 0;
+    this->sum = 0;
 }
 
-Entity::Entity(char* n) {
-    this->name = new char[strlen(n) + 1];
-    strcpy(this->name , n);
+Entity::Entity(char* n,int day,int s) {
+    this->type = new char[strlen(n) + 1];
+    strcpy(this->type , n);
+    this->day = day;
+    this->sum = s;
 }
 
 Entity::Entity(const Entity &e) {
-    name = new char[strlen(e.name) + 1];
-    strcpy(this->name , e.name);
+    type = new char[strlen(e.type) + 1];
+    strcpy(this->type , e.type);
+    day = e.day;
+    sum = e.sum;
 }
 
 Entity::~Entity() {
-    if (this->name) {
-        delete[] this->name;
-        this->name = nullptr;
+    if (this->type) {
+        delete[] this->type;
+        this->type = nullptr;
     }
 }
 
 char *Entity::get_name() {
-    return this->name;
+    return this->type;
 }
 
 char *Entity::to_String() {
-    char* s = new char[strlen(name) + 1];
-    strcpy_s(s, sizeof this->name, this->name);
+    char* s = new char[strlen(type) + 1];
+    strcpy_s(s, sizeof this->type, this->type);
     return s;
 }
 
 void Entity::set_name(char *n) {
-    if (name != nullptr) {
-        delete[] this->name;
+    if (type != nullptr) {
+        delete[] this->type;
     }
-    name = new char[strlen(n) + 1];
-    strcpy_s(name, strlen(n) + 1, n);
+    type = new char[strlen(n) + 1];
+    strcpy(type,n);
 }
 
 Entity &Entity::operator=(const Entity &e) {
     if (this != &e) {
-        set_name(e.name);
+        set_name(e.type);
     }
     return *this;
 }
 
 bool Entity::operator==(const Entity &e) const{
-    return (strcmp(this->name, e.name) == 0);
+    return (strcmp(this->type, e.type) == 0);
 }
 
 ostream &operator<<(ostream &out, Entity &e) {
-    out << "The name is: " << e.name << endl;
+    out << "The type is: " << e.type << endl;
     return out;
 }
 
 istream &operator>>(istream &in, Entity &e) {
     cout << "Name: ";
-    in >> e.name;
+    in >> e.type;
     return in;
+}
+
+int Entity::get_day() {
+    return this->day;
+}
+
+void Entity::set_day(int d) {
+    if (day != 0) {
+        this->day = 0;
+    }
+    day = d;
+}
+
+int Entity::get_sum() {
+    return this->sum;
+}
+
+void Entity::set_sum(int s) {
+    if (sum != 0) {
+        this->sum = 0;
+    }
+    sum = s;
 }
 
 

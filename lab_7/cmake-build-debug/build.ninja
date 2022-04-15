@@ -73,6 +73,18 @@ build CMakeFiles/lab_7.dir/Tests/Tests.cpp.obj: CXX_COMPILER__lab_7_Debug C$:/Us
   OBJECT_DIR = CMakeFiles\lab_7.dir
   OBJECT_FILE_DIR = CMakeFiles\lab_7.dir\Tests
 
+build CMakeFiles/lab_7.dir/Service/Service.cpp.obj: CXX_COMPILER__lab_7_Debug C$:/Users/70000/CLionProjects/lab_7/Service/Service.cpp || cmake_object_order_depends_target_lab_7
+  DEP_FILE = CMakeFiles\lab_7.dir\Service\Service.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_7.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_7.dir\Service
+
+build CMakeFiles/lab_7.dir/UI/UI.cpp.obj: CXX_COMPILER__lab_7_Debug C$:/Users/70000/CLionProjects/lab_7/UI/UI.cpp || cmake_object_order_depends_target_lab_7
+  DEP_FILE = CMakeFiles\lab_7.dir\UI\UI.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_7.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_7.dir\UI
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lab_7
@@ -81,7 +93,7 @@ build CMakeFiles/lab_7.dir/Tests/Tests.cpp.obj: CXX_COMPILER__lab_7_Debug C$:/Us
 #############################################
 # Link the executable lab_7.exe
 
-build lab_7.exe: CXX_EXECUTABLE_LINKER__lab_7_Debug CMakeFiles/lab_7.dir/main.cpp.obj CMakeFiles/lab_7.dir/Entity/Entity.cpp.obj CMakeFiles/lab_7.dir/Repo/Repo.cpp.obj CMakeFiles/lab_7.dir/Tests/Tests.cpp.obj
+build lab_7.exe: CXX_EXECUTABLE_LINKER__lab_7_Debug CMakeFiles/lab_7.dir/main.cpp.obj CMakeFiles/lab_7.dir/Entity/Entity.cpp.obj CMakeFiles/lab_7.dir/Repo/Repo.cpp.obj CMakeFiles/lab_7.dir/Tests/Tests.cpp.obj CMakeFiles/lab_7.dir/Service/Service.cpp.obj CMakeFiles/lab_7.dir/UI/UI.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\lab_7.dir

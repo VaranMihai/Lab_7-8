@@ -4,6 +4,7 @@
 
 #include "Repo.h"
 #include <iostream>
+#include "string.h"
 
 Repo::Repo() {
     this->no_elems = 0;
@@ -23,7 +24,7 @@ vector<Entity> Repo::get_all() {
 
 Entity &Repo::get_entity(char *n) {
     for(Entity& e: v) {
-        if(e.get_name() == n) {
+        if(strcmp(e.get_name(),n) == 0) {
             return e;
         }
     }

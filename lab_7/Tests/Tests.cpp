@@ -12,8 +12,8 @@ using namespace std;
 
 
 void test_entity() {
-    Entity e1((char*)"internet");
-    Entity e2((char*)"mancare");
+    Entity e1((char*)"internet" , 4, 8);
+    Entity e2((char*)"mancare" , 5, 9);
     Entity entities[2] = {e1, e2};
 
     assert(strcmp(e1.get_name(),"internet") == 0);
@@ -26,9 +26,9 @@ void test_entity() {
 
 void test_repo() {
     Repo repo;
-    Entity e1((char*)"internet");
-    Entity e2((char*)"mancare");
-    Entity e3((char*)"utilitati");
+    Entity e1((char*)"internet" , 5, 10);
+    Entity e2((char*)"mancare" , 6, 11);
+    Entity e3((char*)"utilitati" , 7, 14);
 
     repo.add_Entity(e1);
     repo.add_Entity(e2);
